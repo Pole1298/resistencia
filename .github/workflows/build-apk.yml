@@ -7,44 +7,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      KEYSTORE_PATH: android/app/upload-keystore.jks
-      KEY_ALIAS: upload
-      KEYSTORE_PASSWORD: android123
-      KEY_PASSWORD: android123
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Generate release keystore
+      - name: Decode keystore
         run: |
-          keytool -genkeypair \
-            -v \
-            -storetype JKS \
-            -keystore "$KEYSTORE_PATH" \
-            -alias "$KEY_ALIAS" \
-            -keyalg RSA \
-            -keysize 2048 \
-            -validity 10000 \
-            -storepass "$KEYSTORE_PASSWORD" \
-            -keypass "$KEY_PASSWORD" \
-            -dname "CN=Pole, OU=Resistencia, O=Resistencia, L=Concordia, S=Entre Rios, C=AR"
-
-      - name: Print SHA fingerprints
-        run: |
-          keytool -list -v \
-            -keystore "$KEYSTORE_PATH" \
-            -alias "$KEY_ALIAS" \
-            -storepass "$KEYSTORE_PASSWORD"
+          echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > android/app/upload-keystore.jks
 
       - name: Create key.properties
         run: |
           cat > android/key.properties <<EOF
           storeFile=app/upload-keystore.jks
-          storePassword=${KEYSTORE_PASSWORD}
-          keyAlias=${KEY_ALIAS}
-          keyPassword=${KEY_PASSWORD}
+          storePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}
+          keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}
           EOF
 
       - name: Set up Flutter
