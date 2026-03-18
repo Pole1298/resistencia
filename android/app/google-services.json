@@ -1,16 +1,29 @@
 {
-  "functions": [
+  "project_info": {
+    "project_number": "440165252556",
+    "project_id": "resistencia-e33db",
+    "storage_bucket": "resistencia-e33db.firebasestorage.app"
+  },
+  "client": [
     {
-      "source": "functions",
-      "codebase": "default",
-      "disallowLegacyRuntimeConfig": true,
-      "ignore": [
-        "node_modules",
-        ".git",
-        "firebase-debug.log",
-        "firebase-debug.*.log",
-        "*.local"
-      ]
+      "client_info": {
+        "mobilesdk_app_id": "1:440165252556:android:5a2598595b178fd8637169",
+        "android_client_info": {
+          "package_name": "com.example.resistencia_operativos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdT7cCMejDRgEA9bl4sP2Zx7R26SPZoZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
     }
-  ]
+  ],
+  "configuration_version": "1"
 }
