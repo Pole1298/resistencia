@@ -1,0 +1,51 @@
+name: resistencia_rebuild
+description: Resistencia - App comunitaria
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.6
+
+  geolocator: ^10.1.0
+  geolocator_android: ^4.5.0
+  permission_handler: ^11.3.0
+
+  flutter_map: ^6.1.0
+  latlong2: ^0.9.0
+
+  flutter_local_notifications: ^17.1.2
+  shared_preferences: ^2.2.2
+  path_provider: ^2.1.2
+  share_plus: ^7.2.2
+  url_launcher: ^6.2.6
+  http: ^1.2.1
+
+  firebase_core: ^3.0.0
+  firebase_auth: ^5.0.0
+  cloud_firestore: ^5.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/icon.png
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: assets/icon.png
+  adaptive_icon_background: "#000000"
+  adaptive_icon_foreground: assets/icon.png

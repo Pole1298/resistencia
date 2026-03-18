@@ -1,0 +1,14 @@
+MIGRACION PROFESIONAL DEL MODULO REPORTES
+
+1) Copiar estos archivos dentro de tu carpeta lib/
+2) Todavia NO reemplazan toda tu UI actual.
+3) Esta etapa agrega:
+   - modelo Reporte modular
+   - ReportesService
+   - pantalla de lista
+   - pantalla de detalle
+4) En el siguiente paso hay que enchufar estas pantallas desde tu AppShell/Home.
+
+Sugerencia de uso inicial:
+- Agregar un boton de prueba que abra ReportesListScreen(title: 'Reportes de prueba')
+- Luego migrar la creacion de reportes y el mapa.
