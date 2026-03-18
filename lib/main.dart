@@ -39,14 +39,14 @@ class ResistenciaApp extends StatelessWidget {
             color: Color(0xFF111827),
           ),
         ),
-        cardTheme: CardThemeData(
-          color: Colors.white,
-          elevation: 0,
-          margin: EdgeInsets.zero,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24),
-          ),
-        ),
+        cardTheme: CardTheme(
+  color: Colors.white,
+  elevation: 0,
+  margin: EdgeInsets.zero,
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(24),
+  ),
+),
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
           fillColor: Colors.white,
